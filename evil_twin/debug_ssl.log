@@ -1,0 +1,6 @@
+GET http://172.217.21.238/generate_204
+{'host': 'connectivitycheck.android.com', 'connection': 'Keep-Alive', 'content-length': '0', 'user-agent': 'Dalvik/2.1.0 (Linux; U; Android 5.1.1; Redmi 3 MIUI/7.6.8)'}
+
+GET http://54.179.158.80/gslb/gslb/getbucket.asp?list=thm.market.xiaomi.com%2Cthm.market.xiaomi.com&ver=3.0
+{'host': 'resolver.gslb.mi-idc.com', 'connection': 'Keep-Alive', 'content-length': '0', 'user-agent': 'Dalvik/2.1.0 (Linux; U; Android 5.1.1; Redmi 3 MIUI/7.6.8)'}
+

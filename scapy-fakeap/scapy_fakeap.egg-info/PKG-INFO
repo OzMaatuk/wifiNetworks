@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: scapy-fakeap
+Version: 0.1
+Summary: Fake AP implementation using Scapy
+Home-page: UNKNOWN
+Author: rpp0
+Author-email: red@nostack.net
+License: GPLv2
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: scapy

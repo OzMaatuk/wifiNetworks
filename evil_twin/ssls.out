@@ -1,0 +1,49 @@
+2017-07-26 05:58:04,844 Parsing host: connectivitycheck.android.com
+2017-07-26 05:58:04,845 New host: connectivitycheck.android.com
+2017-07-26 05:58:04,846 Resolving host: connectivitycheck.android.com
+2017-07-26 05:58:04,846 Host not cached.
+2017-07-26 05:58:04,856 Parsing host: connectivitycheck.android.com
+2017-07-26 05:58:04,857 New host: connectivitycheck.android.com
+2017-07-26 05:58:04,858 Modifing HOST header: connectivitycheck.android.com -> connectivitycheck.android.com
+2017-07-26 05:58:04,858 Resolved host successfully: connectivitycheck.android.com -> 172.217.21.238
+2017-07-26 05:58:04,859 Parsing host: connectivitycheck.android.com
+2017-07-26 05:58:04,859 New host: connectivitycheck.android.com
+2017-07-26 05:58:04,862 LEO Sending request via HTTP...
+2017-07-26 05:58:04,933 HTTP connection made.
+2017-07-26 05:58:04,934 Sending Request: GET /generate_204
+2017-07-26 05:58:04,935 Sending header: host : connectivitycheck.android.com
+2017-07-26 05:58:04,935 Sending header: connection : Keep-Alive
+2017-07-26 05:58:04,936 Sending header: content-length : 0
+2017-07-26 05:58:04,936 Sending header: user-agent : Dalvik/2.1.0 (Linux; U; Android 5.1.1; Redmi 3 MIUI/7.6.8)
+2017-07-26 05:58:05,004 Got server response: HTTP/1.0 204 No Content
+2017-07-26 05:58:05,005 Got server header: Content-Length:0
+2017-07-26 05:58:05,005 Got server header: Date:Wed, 26 Jul 2017 12:58:04 GMT
+2017-07-26 05:58:05,006 Got server header: Connection:Keep-Alive
+2017-07-26 05:58:05,008 Read from server:
+
+2017-07-26 05:58:06,136 Parsing host: resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,139 New host: resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,140 Resolving host: resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,141 Host not cached.
+2017-07-26 05:58:06,144 Parsing host: resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,144 New host: resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,145 Modifing HOST header: resolver.gslb.mi-idc.com -> resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,146 Resolved host successfully: resolver.gslb.mi-idc.com -> 54.179.158.80
+2017-07-26 05:58:06,146 Parsing host: resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,147 New host: resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,148 LEO Sending request via HTTP...
+2017-07-26 05:58:06,572 HTTP connection made.
+2017-07-26 05:58:06,573 Sending Request: GET /gslb/gslb/getbucket.asp?list=thm.market.xiaomi.com%2Cthm.market.xiaomi.com&ver=3.0
+2017-07-26 05:58:06,573 Sending header: host : resolver.gslb.mi-idc.com
+2017-07-26 05:58:06,574 Sending header: connection : Keep-Alive
+2017-07-26 05:58:06,574 Sending header: content-length : 0
+2017-07-26 05:58:06,575 Sending header: user-agent : Dalvik/2.1.0 (Linux; U; Android 5.1.1; Redmi 3 MIUI/7.6.8)
+2017-07-26 05:58:06,993 Got server response: HTTP/1.1 200 OK
+2017-07-26 05:58:06,993 Got server header: Server:Server
+2017-07-26 05:58:06,994 Got server header: Date:Wed, 26 Jul 2017 12:56:34 GMT
+2017-07-26 05:58:06,995 Got server header: Content-Type:application/json; charset=utf-8
+2017-07-26 05:58:06,995 Got server header: Content-Length:301
+2017-07-26 05:58:06,996 Got server header: Connection:keep-alive
+2017-07-26 05:58:06,996 Got server header: Keep-Alive:timeout=360
+2017-07-26 05:58:06,997 Read from server:
+{"S":"Ok","R":{"country":"国外","province":"以色列","city":"","isp":"","X-Forwarded-Ip":"213.57.149.210","ip":"213.57.149.210","stat-domain":"s.mi1.cc","stat-percent":0.15,"ttl":3600,"tid":-1,"wifi":{"thm.market.xiaomi.com":["54.255.164.247"]},"wap":{"thm.market.xiaomi.com":["54.255.164.247"]}}}

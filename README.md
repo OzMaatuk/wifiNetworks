@@ -50,7 +50,7 @@ python2 setup.py install
     ./monitormode <YOUR SECOND INTERFACE NAME>
 
 * running the attack:
-    python probAttack.py -i <YOUR FIRST INTERFACE NAME> -l <YOUR SECOND INTERFACE NAME>
+    python probAttack.py -i (YOUR FIRST INTERFACE NAME) -l (YOUR SECOND INTERFACE NAME)
  
  from here the script will guide you,
  if you see no networks, try to rerun the script again after monitoring everythig...
@@ -80,3 +80,38 @@ this is the easy one...
     
  the script will guide you further...
  again, if there is any comprehension problems, try rerun everything.
+
+
+# Extra Part
+here ive been testing Rogue AP Attacks Part 1 - Evil Twin
+
+http://solstice.me/python/wireless/2015/11/01/python-evil-twin/
+
+
+in "evil_twin" folder you can find the proper python files,
+the dependeies are same as above.
+
+
+this can be useful for listening to connections over specifict AP and getting thier log...!
+
+* follow instructions in the link
+* * editing /etc/hostapd/hostapd.conf (this is just an example, edit it with your properties)
+    interface=(your monitor interface)
+    driver=nl80211
+    ssid=(your acces point name)
+    hw_mode=g
+    channel=6
+    macaddr_acl=0
+    auth_algs=1
+    ignore_broadcast_ssid=0
+    wpa=3
+    wpa_passphrase=my_password
+    wpa_key_mgmt=WPA-PSK
+    wpa_pairwise=TKIP
+    rsn_pairwise=CCMP
+  * END
+ 
+* * Configuration file for dnsmasq, editing /etc/dnsmasq/dnsmasq.conf
+    listen-address=127.0.0.1
+    log-queries
+  * END

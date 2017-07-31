@@ -244,12 +244,18 @@ def Deauth(Dbssid,Dssid,Dchannel,Dtime):
 	print bcolors.OKBLUE + "\nChanging monitor interface into channel [{}]\n".format(Dchannel) + bcolors.ENDC
 	Reset("INTF")
 	#print "After Reset\n"
-	airmon_out = Popen(["airmon-ng", "start", wireless_interface, Dchannel], stdout=PIPE).communicate()[0]
+	# airmon_out = Popen(["airmon-ng", "start", wireless_interface, Dchannel], stdout=PIPE).communicate()[0]
+	# print ["airmon-ng", "start", sys.argv[2], Dchannel]
+	airmon_out = Popen(["airmon-ng", "start", sys.argv[2], Dchannel])
+	time.sleep(3)
 	#print "after airmon\n"
-	mon_iface = get_moniface()
-	#mon_iface = "mon0"
+	# mon_iface = get_moniface()
+	mon_iface = "mon0"
+	call(["iw","dev","mon0","set","channel","1"])
 	#print mon_iface
 	print bcolors.OKBLUE + "\nAttack time set to: {} Seconds\n".format(Dtime) + bcolors.ENDC
+	# aireplay = Popen(["aireplay-ng", "--deauth", "0",  "-a", Dbssid, "-e", Dssid, mon_iface])
+	print ["aireplay-ng", "--deauth", "0",  "-a", Dbssid, "-e", Dssid, mon_iface]
 	aireplay = Popen(["aireplay-ng", "--deauth", "0",  "-a", Dbssid, "-e", Dssid, mon_iface])
 	time.sleep(Dtime)
 	aireplay.terminate()
@@ -380,8 +386,9 @@ def CheckEvilAP():
 		for row in Evil_data:
 		    print bcolors.WARNING + "({} - {} - '{}' - {} - {} - {} - {})\n".format(row[1],row[2],row[3],row[4],row[5],row[6],row[7]) + bcolors.ENDC
 		    msg = msg + "({} - {} - '{}' - {} - {} - {} - {})\n".format(row[1],row[2],row[3],row[4],row[5],row[6],row[7])
-		thread = threading.Thread(target=AlertAdmin, args=(msg,))
-		thread.start()
+		#### was commecnted ####
+		#thread = threading.Thread(target=AlertAdmin, args=(msg,))
+		#thread.start()
 		#AlertAdmin(msg)
 		cmd = "select opt_val from options where opt_key = 'deauth_time'"
 		cursor.execute(cmd)
@@ -411,7 +418,13 @@ def CheckEvilAP():
 			print "\n\n"
 		    else:
 			print bcolors.WARNING + "Preventive Mode is not enabled\n" + bcolors.ENDC
-			
+		######## added ############
+		for row in Evil_data:
+			print row[1]
+			print row[1]
+			print str(row[4])
+			Deauth(row[1],row[2],str(row[4]),999999)
+
 	    elif EvilAPAttrib:
 		print bcolors.WARNING + bcolors.BOLD + "Fake AP with different Attribute Detected!\n" + bcolors.ENDC
 		msg = "Fake AP with different Attribute Detected!\n"
